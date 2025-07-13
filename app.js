@@ -1,19 +1,22 @@
-const express = require('express');
+const express = require("express");
 const app = express();
-const userModel = require("./models/user");
-const postModel = require("./models/post");
+const cookieParser = require("cookie-parser");
+const path = require("path");
 
-app.get("/", function(req, res){
-    res.send("hey");
-})
+const ownersRouter = require("./routes/ownersRouter");
+const productsRouter = require("./routes/productsRouter");
+const usersRouter = require("./routes/usersRouter");
 
-app.get("/create", function(req, res){
-    let user = await userModel.create({
-        username: "simi",
-        age: 22,
-        email:"simimishra@gmail.com"
-    })
-})
+const db = require("./config/mongoose-connection");
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, "public")));
+app.set("view engine", "ejs");
 
-appp.listen(3000);
+app.use("/owners", ownersRouter);
+app.use("/users", usersRouter);
+app.use("/products", productsRouter);
+
+app.listen(3000);
