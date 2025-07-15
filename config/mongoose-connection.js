@@ -3,8 +3,9 @@ const config = require("config");
 
 const dbgr = require("debug")("development:mongoose");
 
+
 mongoose
-  .connect(`${config.get("MONGODB_URI")}/E-COMMERCE_WEB`) // No space in DB name
+ .connect(`${config.get("MONGODB_URI")}/E-COMMERCE_WEB`) 
   .then(function () {
     dbgr("MongoDB connected");
   })
@@ -12,4 +13,4 @@ mongoose
     dbgr(err);
   });
 
-module.exports = mongoose.connection;
+module.exports = mongoose.connection

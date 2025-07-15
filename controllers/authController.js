@@ -1,5 +1,6 @@
 const userModel = require("../models/user-model");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 const generateToken = require("../utils/generateToken");
 
 module.exports.registerUser = async function (req, res) {
@@ -42,14 +43,13 @@ bcrypt.compare(password, user.password, function(err, result){
   if(result){
     let token = generateToken(user);
     res.cookie("token", token);
-    res.send("you can login");
-  }else{
+    res.redirect("/shop");
+  }else
     return res.send("Email or Password incorrect");
-  }
 });
-};
+}
 
 module.exports.logout = function(req, res){
   res.cookie("token", "");
   res.redirect("/");
-};
+}
