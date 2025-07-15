@@ -14,7 +14,7 @@ const productSchema = mongoose.Schema({
     type: Array,
     default: [],
    },
-   isadmin: Boolean,
+
    orders:{
     type: Array,
     default: [],
