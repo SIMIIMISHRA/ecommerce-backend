@@ -3,9 +3,6 @@
 ![MongoDB](https://img.shields.io/badge/MongoDB-Database-brightgreen)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-
-
-
 # 🛒 E-commerce Backend App
 
 This is a Node.js-based backend for an E-commerce application, built with Express.js and MongoDB. It includes user authentication (JWT), image uploads, product management, and a secure admin interface. The frontend is rendered using EJS and styled with Tailwind CSS.
@@ -38,10 +35,19 @@ This is a Node.js-based backend for an E-commerce application, built with Expres
 ---
 
 ## 📁 Folder Structure
-
-
-
-
+E-commerce web/
+├── config/
+│   ├── default.json
+│   └── mongoose-connection.js
+├── controllers/
+├── middlewares/
+├── models/
+├── public/
+├── routes/
+├── views/
+├── utils/
+├── app.js
+└── README.md
 ---
 
 ## 📦 Installation
@@ -51,6 +57,7 @@ git clone https://github.com/SIMIIMISHRA/ecommerce-backend.git
 cd ecommerce-backend
 npm install
 
+Environment Configuration (config/default.json):
 {
   "MONGODB_URI": "mongodb://127.0.0.1:27017",
   "JWT_SECRET": "your_jwt_secret"
@@ -95,10 +102,11 @@ Stored in MongoDB as binary Buffer data
 
 Rendered in the UI using Base64 encoding
 
-🙋‍♀️ Author
+🙋‍♀️ Author:
 Simi Mishra
 Full Stack Developer | MERN | Java | MongoDB
-GitHub • LinkedIn
+GitHub: https://github.com/SIMIIMISHRA
+
 
 📃 License
 This project is licensed under the MIT License.
@@ -114,10 +122,4 @@ yaml
 Copy
 Edit
 
----
 
-### 🔁 Replace These Before Uploading:
-- `SIMIMISHRA`(https://github.com//SIMIIMISHRA) • 
-
-
----
